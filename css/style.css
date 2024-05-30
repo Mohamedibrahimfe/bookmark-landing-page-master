@@ -20,6 +20,9 @@ body {
 .header{
     height: 100vh;
 }
+.header img {
+    z-index: 2;
+}
 .parent {
     margin-top:280px;
 }
@@ -147,6 +150,12 @@ body {
         background-color: transparent !important;
         border-color: white !important;
     }
+    .parent .right  span::before{
+        width: 0!important;
+    }
+    .child .right  span::before{
+        width: 0!important;
+    }
 }
 
 .hero-btn:hover{
@@ -181,18 +190,32 @@ body {
 }
 .right span{
     position: relative;
+    z-index: -1;
 }
-
+.right{
+    z-index: 5;
+}
 /*  later  */
-.right span::before{
-    /* content: ''; */
+.parent .right  span::before{
+    content: '';
     position: absolute;
-    width: 600px;
+    width: 800px;
     height: 400px;
-    right: 0;
-    bottom: -350px;
+    right: -200px;
+    bottom: -250px;
     background-color: #5266DF;
     border-bottom-left-radius: 200px;
+    z-index: 99;
+}
+.child .right  span::before{
+    content: '';
+    position: absolute;
+    width: 800px;
+    height: 400px;
+    left: -850px;
+    bottom: -250px;
+    background-color: #5266DF;
+    border-bottom-right-radius: 200px;
     z-index: 1;
 }
 .nav-header li a{
